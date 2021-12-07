@@ -1,0 +1,57 @@
+﻿@model IEnumerable<QuanLySinhVien.Models.Diem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MonHocs.TenMonHoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SinhVienS.TenSinhVien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiemHeA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiemHeB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiemHeC)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MonHocs.TenMonHoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SinhVienS.TenSinhVien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiemHeA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiemHeB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiemHeC)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaBangDiem }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaBangDiem }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaBangDiem })
+        </td>
+    </tr>
+}
+
+</table>

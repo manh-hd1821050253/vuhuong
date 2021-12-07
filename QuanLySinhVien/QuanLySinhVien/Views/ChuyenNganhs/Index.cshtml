@@ -1,0 +1,60 @@
+﻿@model IEnumerable<QuanLySinhVien.Models.ChuyenNganh>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    h2{
+        color:#fff;
+    }
+    a{
+        text-decoration:none;
+        color:white;
+    }
+    button{
+        margin-bottom:45px; 
+    }
+    .thead-dark{
+        background-color:black;
+    }
+    td:hover{
+        background-color:dimgrey;
+        opacity:0.6;
+    }
+</style>
+
+<h2 style="font-family: Optima;text-align:center">Quản lý chuyên ngành </h2>
+
+<button class="btn btn-danger btn-block">
+    @Html.ActionLink("Tạo mới", "Create") <i class="far fa-plus-square"></i>
+</button>
+<table class="table table-bordered" style="margin-top:20px">
+    <thead class="thead-dark">
+        <tr>
+            <th class="">
+                Tên chuyên ngành
+            </th>
+            <th>
+                Ngày thành lập
+            </th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenNganh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayThanhLapChuyenNganh)
+                </td>
+                <td>
+                    <button class="btn btn-danger">@Html.ActionLink("sửa", "Edit", new { id = item.MaNganh }) <i class="fas fa-edit"></i></button> |
+                    <button class="btn btn-warning"> @Html.ActionLink("xóa", "Delete", new { id = item.MaNganh }) <i class="fas fa-trash-alt"></i></button>
+                </td>
+            </tr>
+        }
+
+</table>

@@ -1,0 +1,58 @@
+﻿@model QuanLySinhVien.Models.Diem
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Diem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MonHocs.TenMonHoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MonHocs.TenMonHoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SinhVienS.TenSinhVien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SinhVienS.TenSinhVien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiemHeA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiemHeA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiemHeB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiemHeB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiemHeC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiemHeC)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaBangDiem }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

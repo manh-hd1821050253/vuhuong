@@ -1,0 +1,56 @@
+﻿@model IEnumerable<QuanLySinhVien.Models.LopHoc>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Quản lý Lớp</h2>
+<style>
+    .from-vip{
+        padding:20px 250px;
+        
+    }
+    table {
+        background-color: white;
+        border:3px solid red;
+        border-radius:3px;
+        
+    }
+    th,tr,td{
+        color:#000;
+    }
+</style>
+<button class="btn btn-warning">
+    <i class="far fa-plus-square"></i>
+    @Html.ActionLink("Tạo mới", "Create")
+</button>
+<div class="from-vip">
+    <table class="table table-hover">
+        <tr>
+            <th>
+                Tên Khoa
+            </th>
+            <th>
+                Tên Lớp
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Khoas.TenKhoa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenLop)
+                </td>
+                <td>
+                    <button class="btn btn-success"> @Html.ActionLink("Edit", "Edit", new { id = item.MaLop }) <i class="fas fa-edit"></i></button> |
+                    <button class="btn btn-warning"> @Html.ActionLink("Delete", "Delete", new { id = item.MaLop }) <i class="fas fa-trash-alt"></i></button
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
